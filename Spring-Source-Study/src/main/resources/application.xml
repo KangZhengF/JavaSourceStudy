@@ -4,4 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="user" class="com.kang.entity.User"/>
+
+    <bean id="pig1" class="com.kang.entity.Pig" scope="prototype"/>
+    <bean id="pig2" class="com.kang.entity.Pig"/>
 </beans>
