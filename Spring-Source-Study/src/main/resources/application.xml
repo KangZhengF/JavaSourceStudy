@@ -5,6 +5,6 @@
 
     <bean id="user" class="com.kang.entity.User"/>
 
-    <bean id="pig1" class="com.kang.entity.Pig" scope="prototype"/>
-    <bean id="pig2" class="com.kang.entity.Pig"/>
+<!--    <bean id="pig1" class="com.kang.entity.Pig" scope="prototype"/>-->
+<!--    <bean id="pig2" class="com.kang.entity.Pig"/>-->
 </beans>

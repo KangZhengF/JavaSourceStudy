@@ -25,9 +25,9 @@ public class App {
 //        System.out.println(user);
 
         //方式二：@Bean注解
-//        ApplicationContext annoContext = new AnnotationConfigApplicationContext(Config.class);
-//        User user1 = annoContext.getBean(User.class);
-//        System.out.println(user1);
+        ApplicationContext annoContext = new AnnotationConfigApplicationContext(Config.class);
+        User user1 = annoContext.getBean(User.class);
+        System.out.println(user1);
 
         //方式三：@Component注解
 //        ApplicationContext annoContext = new AnnotationConfigApplicationContext(Config.class);
@@ -56,17 +56,17 @@ public class App {
 //        System.out.println(mao);
 
         //方式六：利用Supplier接口
-        AnnotationConfigApplicationContext annoContext = new AnnotationConfigApplicationContext();
-        annoContext.registerBean(User.class, new Supplier<User>() {
-            @Override
-            public User get() {
-                User user = new User();
-                user.setName("abc");
-                return user;
-            }
-        });
-        annoContext.refresh();
-        User user = annoContext.getBean("user", User.class);
-        System.out.println(user);
+//        AnnotationConfigApplicationContext annoContext = new AnnotationConfigApplicationContext();
+//        annoContext.registerBean(User.class, new Supplier<User>() {
+//            @Override
+//            public User get() {
+//                User user = new User();
+//                user.setName("abc");
+//                return user;
+//            }
+//        });
+//        annoContext.refresh();
+//        User user = annoContext.getBean("user", User.class);
+//        System.out.println(user);
     }
 }

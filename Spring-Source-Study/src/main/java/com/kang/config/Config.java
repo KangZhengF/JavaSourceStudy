@@ -9,8 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @ComponentScan("com.kang.entity")
 public class Config {
-//    @Bean
-//    public User user() {
-//        return new User();
-//    }
+    @Bean
+    public User user() {
+        return new User();
+    }
 }
