@@ -12,22 +12,23 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * @author 康正锋
  */
-@ComponentScan("com.kang.entity")
+//@ComponentScan("com.kang.entity")
+@Configuration
 public class Config {
     @Bean
     public User user() {
         return new User();
     }
 
-    @Bean
-    public ThreadPoolTaskExecutor threadPoolTaskExecutor() {
-        ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
-        threadPoolTaskExecutor.setCorePoolSize(1);
-        threadPoolTaskExecutor.setMaxPoolSize(3);
-        threadPoolTaskExecutor.setQueueCapacity(2);
-        threadPoolTaskExecutor.setKeepAliveSeconds(1000);
-        threadPoolTaskExecutor.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());
-        threadPoolTaskExecutor.initialize();
-        return threadPoolTaskExecutor;
-    }
+//    @Bean
+//    public ThreadPoolTaskExecutor threadPoolTaskExecutor() {
+//        ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+//        threadPoolTaskExecutor.setCorePoolSize(1);
+//        threadPoolTaskExecutor.setMaxPoolSize(3);
+//        threadPoolTaskExecutor.setQueueCapacity(2);
+//        threadPoolTaskExecutor.setKeepAliveSeconds(1000);
+//        threadPoolTaskExecutor.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());
+//        threadPoolTaskExecutor.initialize();
+//        return threadPoolTaskExecutor;
+//    }
 }
