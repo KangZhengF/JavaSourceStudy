@@ -26,8 +26,8 @@ public class App {
 
         //方式二：@Bean注解
         ApplicationContext annoContext = new AnnotationConfigApplicationContext(Config.class);
-        User user1 = annoContext.getBean(User.class);
-        System.out.println(user1);
+//        User user1 = annoContext.getBean(User.class);
+//        System.out.println(user1);
 
         //方式三：@Component注解
 //        ApplicationContext annoContext = new AnnotationConfigApplicationContext(Config.class);
