@@ -1,17 +1,9 @@
 package com.kang.app;
 
 import com.kang.config.Config;
-import com.kang.entity.Cat;
-import com.kang.entity.CatFactoryBean;
-import com.kang.entity.Dog;
-import com.kang.entity.User;
-import org.springframework.beans.factory.support.AbstractBeanDefinition;
-import org.springframework.beans.factory.support.BeanDefinitionBuilder;
+import com.kang.entity.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.function.Supplier;
 
 /**
  * @author 康正锋
@@ -26,8 +18,12 @@ public class App {
 
         //方式二：@Bean注解
         ApplicationContext annoContext = new AnnotationConfigApplicationContext(Config.class);
-//        User user1 = annoContext.getBean(User.class);
-//        System.out.println(user1);
+        for (String beanDefinitionName : annoContext.getBeanDefinitionNames()) {
+            System.out.println(beanDefinitionName);
+        }
+
+        User user1 = annoContext.getBean(User.class);
+        System.out.println(user1);
 
         //方式三：@Component注解
 //        ApplicationContext annoContext = new AnnotationConfigApplicationContext(Config.class);

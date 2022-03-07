@@ -12,6 +12,12 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Pig {
-    private int id = 1;
-    private String name = "张三";
+    private User user;
+//    private int id = 1;
+//    private String name = "张三";
+    public Pig(){}
+
+    public Pig(User user) {
+        this.user = user;
+    }
 }
