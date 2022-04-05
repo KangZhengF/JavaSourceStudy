@@ -12,6 +12,7 @@
         <module>Jdk-8-Study</module>
         <module>Spring-Source-Study</module>
         <module>concurrent-study</module>
+        <module>spring-use-study</module>
     </modules>
 
 </project>
