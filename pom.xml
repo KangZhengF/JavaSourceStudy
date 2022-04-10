@@ -13,6 +13,7 @@
         <module>Spring-Source-Study</module>
         <module>concurrent-study</module>
         <module>spring-use-study</module>
+        <module>spring-boot-source-study</module>
     </modules>
 
 </project>
