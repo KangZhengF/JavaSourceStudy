@@ -1,4 +1,4 @@
-package com.kang.reactor8;
+package com.kang.reactor8.entity;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

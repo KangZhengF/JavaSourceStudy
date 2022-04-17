@@ -23,7 +23,7 @@
 的框架。
 2. Reactor有两个核心类，Mono和Flux，这两个类
 实现接口Publisher，提供丰富的操作符。
-   1. Flux对象实现发布者，返回n个元素。
+   1. Flux实现发布者，返回n个元素。
    2. Mono实现发布者，返回0或1个元素。
 3. Flux和Mono都是数据流的发布者，
 使用Flux和Mono都可以发出三种数据信号：
@@ -47,3 +47,76 @@
    2. map 元素映射为新元素。
    3. flatMap 元素映射为流，把每个元素转换成流，
 然后把转换之后的多个流合并成大的流。
+
+# Spring Webflux执行流程和核心API
+1. Spring Webflux基于Reactor，默认使用容器是Netty，
+Netty是高性能的NIO框架，异步非阻塞的框架。
+2. BIO
+![img_1.png](img_1.png)
+3. NIO
+![img.png](img.png)
+4. Spring Webflux执行过程和Spring MVC是相似的。
+- Spring Webflux核心控制器是DispatchHandler，
+实现接口WebHandler。
+5. Spring Webflux 里面的DispatchHandler，负责
+请求的处理：
+- HandlerMapping：请求查询到处理的方法。
+- HandlerAdapter：真正负责请求处理。
+- HandlerResultHandler：响应结果处理。
+6. Spring Webflux实现函数式编程有两个接口：
+- RouterFunction：路由处理
+- HandlerFunction：处理函数
+
+# Spring Webflux（基于注解编程模型）
+Spring Webflux实现方式有两种：
+- 注解编程模型
+- 函数式编程模型
+使用注解编程模型方式，和之前SpringMVC使用相似，
+只需要把相关依赖配置到项目中，SpringBoot
+自动配置相关运行容器，默认使用Netty服务器。
+## 1.创建SpringBoot工程，引入Webflux依赖。
+```xml
+<dependencies>
+   <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-webflux</artifactId>
+      <version>2.5.6</version>
+   </dependency>
+   <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>2.5.6</version>
+   </dependency>
+   <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-core</artifactId>
+      <version>3.4.10</version>
+   </dependency>
+</dependencies>
+```
+## 2.配置启动端口号。
+## 3.创建包和相关类，实体类和Service接口
+## 4.创建controller
+## 5.启动服务，做测试。
+- 说明SpringMVC实现方式，同步阻塞的方式，基于
+SpringMVC+Servlet+Tomcat
+- SpringWebflux方式实现，异步非阻塞方式，基于
+SpringWebflux+Reactor+Netty
+
+# SpringWebflux（基于函数式编程模型）
+1. 在使用函数式编程模型操作时候，要自己初始化服务器。
+2. 有两个核心接口：
+- RouterFunction：实现路由功能，请求转发给对应
+handler。
+- HandlerFunction：处理请求，生成响应函数。
+3. 核心任务：定义两个函数式接口的实现并且启动服务器。
+4. SpringWebflux请求和响应不再是ServletRequest和
+ServletResponse。
+而是ServerRequest和ServerResponse。
+## 1. 把注解编程模型工程复制一份
+## 2. 创建Handler（具体实现方法）
+## 3. 初始化服务器，编写Router
+- 创建路由
+- 创建服务器完成适配
+- 最终调用
+## 4. 使用WebClient调用

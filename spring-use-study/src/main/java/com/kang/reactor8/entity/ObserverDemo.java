@@ -1,4 +1,4 @@
-package com.kang.reactor8;
+package com.kang.reactor8.entity;
 
 import java.util.Observable;
 
