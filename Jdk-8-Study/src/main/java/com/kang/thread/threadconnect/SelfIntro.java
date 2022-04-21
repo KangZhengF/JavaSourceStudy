@@ -1,8 +1,9 @@
 package com.kang.thread.threadconnect;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
-public class Test {
+public class SelfIntro {
     public static void main(String[] args) {
         String a = "11,12,,14,,17,";
 //        String a = "276242161";
@@ -10,6 +11,7 @@ public class Test {
         for (String s : split) {
             System.out.println(s);
         }
+        HashMap<Object, Object> map = new HashMap<>();
         System.out.println(Arrays.toString(split));
         /*
         自我介绍：面试官下午好，首先感谢贵司提供的面试机会。
